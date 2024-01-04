@@ -2,13 +2,13 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./App.css";
 import Browse from "./Components/Browse";
 import Login from "./Components/Login";
+import Body from "./Components/Body";
+import appStore from "./Utils/appStore";
+import { Provider } from "react-redux";
 
 function App() {
-  const appRouter = createBrowserRouter([
-    { path: "/", element: <Login /> },
-    { path: "/browse", element: <Browse /> },
-  ]);
-  return <RouterProvider router={appRouter} />;
+  return <Provider store ={appStore}><Body/></Provider> 
+  
 }
 
 export default App;
